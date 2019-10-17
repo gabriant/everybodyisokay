@@ -16,7 +16,6 @@ public class Spawner : MonoBehaviour
     [Dropdown("vectorDir")]
     public Vector2 shootDirection;
 
-    private float nextSpawn = 0f;
     private DropdownList<Vector2> vectorDir = new DropdownList<Vector2>()
     {
         { "Up", Vector2.up },

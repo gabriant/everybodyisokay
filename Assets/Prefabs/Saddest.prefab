@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1352179760863084074, guid: 97284544442a1724eaf4ad58d494de14,
         type: 3}
       propertyPath: m_Name
-      value: Okay
+      value: Saddest
       objectReference: {fileID: 0}
     - target: {fileID: 93231522067929835, guid: 97284544442a1724eaf4ad58d494de14,
         type: 3}
@@ -73,5 +73,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f5ed99399ba5c8241b06f9113dc063f6,
         type: 3}
+    - target: {fileID: 3355780277704284188, guid: 97284544442a1724eaf4ad58d494de14,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.0047169924
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355780277704284188, guid: 97284544442a1724eaf4ad58d494de14,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.63071555
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355780277704284188, guid: 97284544442a1724eaf4ad58d494de14,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97284544442a1724eaf4ad58d494de14, type: 3}
