@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tilter : MonoBehaviour
 {
+    public int speed = 10;
+
     private Rigidbody2D body;
     private GameObject obj;
 
@@ -15,10 +17,10 @@ public class Tilter : MonoBehaviour
     void FixedUpdate ()
     {
         if (Input.GetKey(KeyCode.LeftArrow)) {
-            transform.Rotate(0, 0, 10, Space.Self);
+            transform.Rotate(0, 0, speed, Space.Self);
         }
         if (Input.GetKey(KeyCode.RightArrow)) {
-            transform.Rotate(0, 0, -10, Space.Self);
+            transform.Rotate(0, 0, -speed, Space.Self);
         }
     }
 }
