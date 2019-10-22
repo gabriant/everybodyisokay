@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TiltController : MonoBehaviour
+public class ControllerA : MonoBehaviour
 {
     public float smooth = 5.0f;
     public float tiltAngle = 60.0f;
-    private Vector2 rotation;
-    private Rigidbody2D body;
 
-    void Update()
+    void Update ()
     {
         // Smoothly tilts a transform towards a target rotation.
         float tiltAroundZ = Input.GetAxis("Horizontal") * -tiltAngle;
@@ -24,5 +22,4 @@ public class TiltController : MonoBehaviour
         );
 
     }
-
 }

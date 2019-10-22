@@ -6,16 +6,37 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public Text scoreText;
-    public Checker checker;
 
     void Awake ()
     {
         scoreText = GetComponent<Text>();
     }
 
-    void Update ()
+    void Start ()
     {
-        scoreText.text = checker.score.ToString();
-        // scoreText.text = checker.time;
+        GameEvents.current.onMainEmojiTouch += SetStart;
+        GameEvents.current.onCheckerTriggerEnter += SetGameOver;
     }
+
+    private void SetStart ()
+    {
+        scoreText.text = "Started!";
+    }
+
+    private void SetGameOver ()
+    {
+        scoreText.text = "Game Over!";
+    }
+
+    private void OnDestroy ()
+    {
+        GameEvents.current.onMainEmojiTouch -= SetStart;
+        GameEvents.current.onCheckerTriggerEnter -= SetGameOver;
+    }
+
+    // void Update ()
+    // {
+    //     // scoreText.text = checker.score.ToString();
+    //     // scoreText.text = checker.time;
+    // }
 }

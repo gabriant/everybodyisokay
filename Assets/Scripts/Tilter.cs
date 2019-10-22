@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class Tilter : MonoBehaviour
 {
-    public int speed = 10;
-
-    private Rigidbody2D body;
-    private GameObject obj;
+    public Rigidbody2D body;
 
     void Awake ()
     {
         body = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate ()
+    private void StartTimer ()
     {
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            transform.Rotate(0, 0, speed, Space.Self);
-        }
-        if (Input.GetKey(KeyCode.RightArrow)) {
-            transform.Rotate(0, 0, -speed, Space.Self);
+        Debug.Log(Time.deltaTime);
+    }
+
+    // Trigger when emoji touches the tilter
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "MainEmoji") {
+            GameEvents.current.MainEmojiTouch();
+            Debug.Log("Start!");
         }
     }
 }

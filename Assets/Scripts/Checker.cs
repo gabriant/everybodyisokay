@@ -1,22 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using NaughtyAttributes;
+﻿    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using NaughtyAttributes;
 
-public class Checker : MonoBehaviour
-{
-    public int score;
-    // public string time;
-
-    private BoxCollider2D area;
-    // private float startTime;
-    // private bool count = true;
-
-    void Awake ()
+    public class Checker : MonoBehaviour
     {
-        area = GetComponent<BoxCollider2D>();
-        // score = 0;
-    }
+        public int score;
+        // public string time;
+
+        private BoxCollider2D area;
+        // private float startTime;
+        // private bool count = true;
+
+        void Awake ()
+        {
+            area = GetComponent<BoxCollider2D>();
+            // score = 0;
+        }
 
     // void Start ()
     // {
@@ -36,10 +36,14 @@ public class Checker : MonoBehaviour
     //     }
     // }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D (Collider2D other)
     {
-        Emoji emoji = other.GetComponent<Emoji>();
-        score += emoji.value;
+        if (other.gameObject.tag == "MainEmoji")
+        {
+            GameEvents.current.CheckerTriggerEnter();
+            Debug.Log("Game Over!");
+        }
     }
+
 
 }

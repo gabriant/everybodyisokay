@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Okay
       objectReference: {fileID: 0}
+    - target: {fileID: 8955496074850704273, guid: 670834ef85590844093235dcfd488ddb,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainEmoji
+      objectReference: {fileID: 0}
     - target: {fileID: 8052579053555466064, guid: 670834ef85590844093235dcfd488ddb,
         type: 3}
       propertyPath: m_LocalPosition.x

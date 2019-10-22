@@ -5,16 +5,19 @@ using NaughtyAttributes;
 
 public class Spawner : MonoBehaviour
 {
-    public List<GameObject> prefabs;
+    public List<GameObject> objects;
 
-    [Slider(0f, 20f)]
-    public float fireSpeed;
+    [Slider(0.1f, 4f)]
+    public float objScale = 1f;
+
+    [Slider(0.1f, 20f)]
+    public float objSpeed;
 
     [Slider(1f, 10f)]
-    public float fireRate;
+    public float objPerSecond = 1f;
 
     [Dropdown("vectorDir")]
-    public Vector2 shootDirection;
+    public Vector2 direction;
 
     private DropdownList<Vector2> vectorDir = new DropdownList<Vector2>()
     {
@@ -33,12 +36,13 @@ public class Spawner : MonoBehaviour
     IEnumerator Spawn()
     {
         while (true) {
-            int idx = Random.Range(0, prefabs.Count);
+            int idx = Random.Range(0, objects.Count);
             GameObject obj = Instantiate(
-                prefabs[idx], transform.position, Quaternion.identity
+                objects[idx], transform.position, Quaternion.identity
             ) as GameObject;
-            obj.GetComponent<Rigidbody2D>().velocity = shootDirection * fireSpeed;
-            yield return new WaitForSeconds(1 / fireRate);
+            obj.GetComponent<Rigidbody2D>().velocity = direction * objSpeed;
+            obj.transform.localScale = new Vector3(objScale, objScale, objScale);
+            yield return new WaitForSeconds(1 / objPerSecond);
         }
     }
 }

@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sad
       objectReference: {fileID: 0}
+    - target: {fileID: 7812439332231638502, guid: 33be416b0b9ddfc4995e2b39d620d517,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 9215365296527362343, guid: 33be416b0b9ddfc4995e2b39d620d517,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -92,6 +97,11 @@ PrefabInstance:
         type: 3}
       propertyPath: value
       value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895189938892801043, guid: 33be416b0b9ddfc4995e2b39d620d517,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33be416b0b9ddfc4995e2b39d620d517, type: 3}
