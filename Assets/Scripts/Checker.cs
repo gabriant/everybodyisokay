@@ -6,8 +6,11 @@ using NaughtyAttributes;
 public class Checker : MonoBehaviour
 {
     public int score;
+    // public string time;
 
     private BoxCollider2D area;
+    // private float startTime;
+    // private bool count = true;
 
     void Awake ()
     {
@@ -15,9 +18,22 @@ public class Checker : MonoBehaviour
         // score = 0;
     }
 
+    // void Start ()
+    // {
+    //     startTime = Time.time;
+    // }
+
     // void Update()
     // {
-    //     Debug.Log(area.IsTouching());
+    //     if (count) {
+
+    //         float t = Time.time - startTime;
+
+    //         string min = ((int) t/60).ToString();
+    //         string sec = (t%60).ToString("f2");
+
+    //         time = min + ":" + sec;
+    //     }
     // }
 
     void OnTriggerEnter2D(Collider2D other)

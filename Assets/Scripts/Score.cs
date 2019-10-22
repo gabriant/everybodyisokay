@@ -16,5 +16,6 @@ public class Score : MonoBehaviour
     void Update ()
     {
         scoreText.text = checker.score.ToString();
+        // scoreText.text = checker.time;
     }
 }

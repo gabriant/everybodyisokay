@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Emoji : MonoBehaviour
 {
+    public string name;
     public int value;
 
     // void Start()
