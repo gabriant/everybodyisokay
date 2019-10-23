@@ -2,36 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using NaughtyAttributes;
 
 public class GameManager : MonoBehaviour
 {
     public Text label;
+    public Spawner spawner;
+
+    [Slider(1f, 100f)]
+    public int multiplier;
 
     private bool isStarted = false;
-
-    private int min, sec;
-    private float cent;
+    private float score;
 
     void Start()
     {
         GameEvents.current.onMainEmojiTouch += SetStart;
         GameEvents.current.onCheckerTriggerEnter += SetGameOver;
 
-        min = 0;
-        sec = 0;
-        cent = 0f;
+        score = 0f;
     }
 
     void Update () {
         if (isStarted) {
-            cent += Time.deltaTime * 100;
+            score += Time.deltaTime * multiplier;
 
-            if (cent >= 99) {
-                sec++;
-                cent = 0;
-            }
-
-            label.text = sec.ToString("00") + ":" + cent.ToString("00");
+            label.text = score.ToString("00");
         }
     }
 
@@ -44,11 +40,13 @@ public class GameManager : MonoBehaviour
     private void SetStart ()
     {
         isStarted = true;
+        spawner.TurnOn();
     }
 
     private void SetGameOver ()
     {
         isStarted = false;
+        spawner.TurnOff();
     }
 
 }

@@ -43,12 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c51038461349474e8de176a62ca0120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
+  objects:
   - {fileID: 6851602393494004715, guid: 5810525dd6674894daf19125bbc9c6d3, type: 3}
   - {fileID: 8955496074850704273, guid: 670834ef85590844093235dcfd488ddb, type: 3}
-  - {fileID: 7812439332231638502, guid: 33be416b0b9ddfc4995e2b39d620d517, type: 3}
   - {fileID: 1352179760863084074, guid: 97284544442a1724eaf4ad58d494de14, type: 3}
   - {fileID: 7184306538531785391, guid: 5e7d1d4a8df631e4baa5d12d00761a59, type: 3}
-  fireSpeed: 1
-  fireRate: 1
-  shootDirection: {x: 0, y: 0}
+  - {fileID: 6647055268513160324, guid: 911888c18a08f2140a30810702cbe0dd, type: 3}
+  - {fileID: 6848160719823594192, guid: d45b871834afcb44c80afd7eb5f86906, type: 3}
+  objScale: 0.61
+  objSpeed: 0.1
+  objPerSecond: 1
+  direction: {x: 1, y: 0}
+  active: 0

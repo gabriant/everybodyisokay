@@ -19,6 +19,8 @@ public class Spawner : MonoBehaviour
     [Dropdown("vectorDir")]
     public Vector2 direction;
 
+    private bool active;
+
     private DropdownList<Vector2> vectorDir = new DropdownList<Vector2>()
     {
         { "Up", Vector2.up },
@@ -28,14 +30,22 @@ public class Spawner : MonoBehaviour
         { "None", Vector2.zero },
     };
 
-    void Start()
+    public void TurnOn ()
     {
+        active = true;
         StartCoroutine(Spawn());
+        Debug.Log("Lavai");
+    }
+
+    public void TurnOff ()
+    {
+        active = false;
+        Debug.Log("Parou");
     }
 
     IEnumerator Spawn()
     {
-        while (true) {
+        while (active){
             int idx = Random.Range(0, objects.Count);
             GameObject obj = Instantiate(
                 objects[idx], transform.position, Quaternion.identity
