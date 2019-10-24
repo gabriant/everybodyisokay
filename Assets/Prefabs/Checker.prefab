@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5651807690162199770}
   - component: {fileID: 5651807690162199780}
-  - component: {fileID: 5651807690162199771}
+  - component: {fileID: 1714717742}
   m_Layer: 0
-  m_Name: LeftChecker
+  m_Name: Checker
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676b067769c303b469ca1e1e6bf927ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &5651807690162199771
-BoxCollider2D:
+  score: 0
+--- !u!68 &1714717742
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -58,15 +59,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4, y: 1}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -4, y: 0}
+  - {x: 4, y: 0}

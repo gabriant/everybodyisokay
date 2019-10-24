@@ -5,7 +5,7 @@ using NaughtyAttributes;
 
 public class Checker : MonoBehaviour
 {
-    public int score;
+    // public int score;
     private BoxCollider2D area;
 
     void Awake ()

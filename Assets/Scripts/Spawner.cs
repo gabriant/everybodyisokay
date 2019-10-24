@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
     [Dropdown("vectorDir")]
     public Vector2 direction;
 
-    private bool active;
+    public bool isOn;
 
     private DropdownList<Vector2> vectorDir = new DropdownList<Vector2>()
     {
@@ -32,26 +32,31 @@ public class Spawner : MonoBehaviour
 
     public void TurnOn ()
     {
-        active = true;
-        StartCoroutine(Spawn());
-        Debug.Log("Lavai");
+        if (!isOn) {
+            isOn = true;
+            StartCoroutine(Spawn());
+            Debug.Log("Lavai");
+        }
     }
 
     public void TurnOff ()
     {
-        active = false;
-        Debug.Log("Parou");
+        if (isOn) {
+            isOn = false;
+            Debug.Log("Parou");
+        }
     }
 
     IEnumerator Spawn()
     {
-        while (active){
+        while (isOn){
             int idx = Random.Range(0, objects.Count);
             GameObject obj = Instantiate(
                 objects[idx], transform.position, Quaternion.identity
             ) as GameObject;
             obj.GetComponent<Rigidbody2D>().velocity = direction * objSpeed;
             obj.transform.localScale = new Vector3(objScale, objScale, objScale);
+
             yield return new WaitForSeconds(1 / objPerSecond);
         }
     }

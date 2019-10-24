@@ -44,14 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - {fileID: 6851602393494004715, guid: 5810525dd6674894daf19125bbc9c6d3, type: 3}
-  - {fileID: 8955496074850704273, guid: 670834ef85590844093235dcfd488ddb, type: 3}
-  - {fileID: 1352179760863084074, guid: 97284544442a1724eaf4ad58d494de14, type: 3}
-  - {fileID: 7184306538531785391, guid: 5e7d1d4a8df631e4baa5d12d00761a59, type: 3}
-  - {fileID: 6647055268513160324, guid: 911888c18a08f2140a30810702cbe0dd, type: 3}
+  - {fileID: 5373553736836908120, guid: 3fe34a4985c10b2408f4f253771036c5, type: 3}
+  - {fileID: 3132299218715595921, guid: 864f09b79ea0b1a448a10c9b2e2358be, type: 3}
+  - {fileID: 9153039821742744607, guid: 99f9134a24ad7d7459a9cb4c75fe52bf, type: 3}
+  - {fileID: 7385301284335380168, guid: 0c7189170b7b27a48a40bee90b5fca24, type: 3}
   - {fileID: 6848160719823594192, guid: d45b871834afcb44c80afd7eb5f86906, type: 3}
-  objScale: 0.61
+  objScale: 0.7
   objSpeed: 0.1
   objPerSecond: 1
   direction: {x: 1, y: 0}
-  active: 0
+  isOn: 0

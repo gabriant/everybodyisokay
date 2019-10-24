@@ -1,3 +1,4 @@
 # Keep It Okay
 
-My first game made with Unity and C#
+Meu primeiro jogo feito com C# e Unity.
+Este é um projeto de aprendizado. Sem objetivo comercial.
