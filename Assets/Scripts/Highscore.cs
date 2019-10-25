@@ -12,7 +12,7 @@ public class Highscore : MonoBehaviour
     {
         label = GetComponent<Text>();
         highscore = PlayerPrefs.GetFloat("highscore", 0f);
-        label.text = ("Highscore " + highscore).ToString();
+        label.text = "Highscore " + highscore.ToString("0");
     }
 
 }

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private bool isStarted = false;
     private float score;
+
     private float highscore;
 
     void Start()
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
     void Update () {
         if (isStarted) {
             score += Time.deltaTime * multiplier;
-            label.text = score.ToString("00");
+            label.text = score.ToString("0");
         }
     }
 
@@ -49,7 +50,10 @@ public class GameManager : MonoBehaviour
     {
         isStarted = false;
         spawner.TurnOff();
-        SetHighscore();
+
+        if (score > highscore)
+            SetHighscore(score);
+
         SceneManager.LoadScene("GameOver");
     }
 
@@ -58,11 +62,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    private void SetHighscore ()
+    private void SetHighscore (float score)
     {
-        if (score > highscore) {
-            PlayerPrefs.SetFloat("highscore", score);
-        }
+        PlayerPrefs.SetFloat("highscore", score);
+    }
+
+    [Button("Reset Highscore")]
+    private void ResetHighscore () {
+        SetHighscore(0);
     }
 
 }
