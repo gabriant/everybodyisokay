@@ -49,6 +49,9 @@ MonoBehaviour:
   - {fileID: 9153039821742744607, guid: 99f9134a24ad7d7459a9cb4c75fe52bf, type: 3}
   - {fileID: 7385301284335380168, guid: 0c7189170b7b27a48a40bee90b5fca24, type: 3}
   - {fileID: 6848160719823594192, guid: d45b871834afcb44c80afd7eb5f86906, type: 3}
+  - {fileID: 8684778713350613766, guid: 89991a26b6439504c9edecb268145160, type: 3}
+  - {fileID: 3691032820810652050, guid: be20735066604ac43bf6cdd5e3fb5a1d, type: 3}
+  - {fileID: 160726557062453592, guid: 114327adcef81dd4c89c31d2285f6ab7, type: 3}
   objScale: 0.7
   objSpeed: 0.1
   objPerSecond: 1

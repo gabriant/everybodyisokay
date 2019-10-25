@@ -10,6 +10,8 @@ and this project adheres (partialy) to [Semantic Versioning](https://semver.org/
 - Menu principal.
 - Número da versão.
 - Changelog.
+- Controle por touch.
+- Configuração de build android.
 
 ### Changed
 - Sprites para os objetos.

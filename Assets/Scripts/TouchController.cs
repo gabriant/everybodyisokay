@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
-public class ControllerA : MonoBehaviour
+public class TouchController : MonoBehaviour
 {
     [Slider(0f, 100f)]
     public float smooth = 5.0f;
@@ -16,7 +16,18 @@ public class ControllerA : MonoBehaviour
 
     void Update ()
     {
-        tiltAroundZ = Input.GetAxis("Horizontal") * maxAngle;
+        if (Input.touchCount > 0) {
+
+            Touch touch = Input.GetTouch(0);
+
+            Vector2 pos = touch.position;
+
+            if (pos.x > 0)
+                tiltAroundZ = 0.3f * maxAngle;
+            else if (pos.x < 0)
+                tiltAroundZ = -0.3f * maxAngle;
+
+        }
     }
 
     void FixedUpdate ()
