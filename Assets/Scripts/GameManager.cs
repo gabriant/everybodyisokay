@@ -15,13 +15,15 @@ public class GameManager : MonoBehaviour
 
     private bool isStarted = false;
     private float score;
-
     private float highscore;
+
+    public GameObject mainEmoji;
 
     void Start()
     {
         GameEvents.current.onMainEmojiTouch += SetStart;
         GameEvents.current.onCheckerTriggerEnter += SetGameOver;
+        // mainEmoji = GameObject.FindGameObjectWithTag("MainEmoji");
 
         score = 0f;
         highscore = PlayerPrefs.GetFloat("highscore", score);
@@ -32,7 +34,17 @@ public class GameManager : MonoBehaviour
             score += Time.deltaTime * multiplier;
             label.text = score.ToString("0");
         }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+            RestartGame();
+
     }
+
+    // void FixedUpdate () {
+    //     float scale = score/100000;
+    //     // if (score > 300)
+    //     mainEmoji.transform.localScale -= new Vector3(scale, scale, scale);
+    // }
 
     private void OnDestroy ()
     {
@@ -57,7 +69,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
-    public void restartGame ()
+    public void RestartGame ()
     {
         SceneManager.LoadScene("Game");
     }
